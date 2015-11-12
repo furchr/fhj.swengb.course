@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 # kuschelrock
+=======
+# Lecture 04, 10.11
+
+- [Slides](material/presentations/lecture04.pdf)
+>>>>>>> refs/remotes/rladstaetter/master
 
 # Lab 03, 5.11
 
 - [Maven Android Deployer](https://github.com/simpligility/maven-android-sdk-deployer)
 - [GitHub Tutorial](http://try.github.io/)
 - [JavaFX Scene Builder](http://gluonhq.com/open-source/scene-builder/)
+- [Slides](material/presentations/lab03.pdf)
 
 # Lecture 03, 3.11
 

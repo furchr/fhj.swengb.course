@@ -81,7 +81,7 @@ case class Assessment(name: String, student: Student) {
 
     val targetImpl = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}Assignment.scala")
     val targetTest = new File(s"fhj.swengb.lecturer/students/src/test/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}AssignmentTest.scala")
-    val referenceTest = new File(s"$assessmentName/src/test/scala/fhj/swengb/assignments/$name/rladstaetter/${Name}AssignmentTest.scala")
+    val referenceTest = new File(s"$assessmentName/src/test/scala/fhj/swengb/assignments/$name/jbtastic/${Name}AssignmentTest.scala")
 
     SwengbUtil.mkParent(targetImpl)
     SwengbUtil.mkParent(targetTest)
@@ -90,7 +90,7 @@ case class Assessment(name: String, student: Student) {
       SwengbUtil.writeToFile(targetImpl, implSrc)
 
       val content = Source.fromFile(referenceTest).mkString
-      SwengbUtil.writeToFile(targetTest, content.replaceAll("rladstaetter", student.userId))
+      SwengbUtil.writeToFile(targetTest, content.replaceAll("jbtastic", student.userId))
 
       //SwengbUtil.writeToFile(targetTest, testSrc)
     }
