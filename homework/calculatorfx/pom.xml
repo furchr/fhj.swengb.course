@@ -3,15 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>fhj.swengb</groupId>
-        <artifactId>course</artifactId>
+        <groupId>fhj.swengb.homework</groupId>
+        <artifactId>homework</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>fhj.swengb.material</groupId>
-    <artifactId>material</artifactId>
-    <name>fhj.swengb.material</name>
-    <description>Examples, demos, apps for the lecture and the exercises</description>
+    <artifactId>calculatorfx</artifactId>
+    <name>fhj.swengb.homework.calculatorfx</name>
+    <description>A JavaFX Calculator</description>
 
     <dependencies>
         <dependency>
@@ -26,11 +25,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.spray</groupId>
-            <artifactId>spray-json_2.11</artifactId>
-            <version>1.3.2</version>
         </dependency>
     </dependencies>
 
