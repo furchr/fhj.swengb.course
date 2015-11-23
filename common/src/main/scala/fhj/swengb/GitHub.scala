@@ -9,7 +9,15 @@ import spray.json._
   */
 object GitHub {
 
-  case class User(login: String, avatarUrl: URL, htmlUrl: URL, fullname: String, email: String, blogURL: String, pubRepos: String, pubGists: String, createdOn: String, updOn: String )
+  case class User(login: String,
+                  avatarUrl: URL,
+                  htmlUrl: URL,
+                  name: String,
+                  //company: String,
+                  pubRepos: BigDecimal,
+                  followers: BigDecimal,
+                  following: BigDecimal
+                 )
 
   object GithubUserProtocol extends DefaultJsonProtocol {
 
@@ -19,13 +27,11 @@ object GitHub {
           JsString(user.login),
           JsString(user.avatarUrl.toString),
           JsString(user.htmlUrl.toString),
-          JsString(user.fullname),
-          JsString(user.email),
-          JsString(user.blogURL),
-          JsString(user.pubRepos),
-          JsString(user.pubGists),
-          JsString(user.createdOn),
-          JsString(user.updOn)
+          JsString(user.name),
+          //JsString(user.company)
+          JsNumber(user.pubRepos),
+          JsNumber(user.followers),
+          JsNumber(user.following)
         )
 
 
@@ -36,13 +42,11 @@ object GitHub {
             val JsString(a_url) = m("avatar_url")
             val JsString(html_url) = m("html_url")
             val JsString(f_name) = m("name")
-            val JsString(e_mail) = m("email")
-            val JsString(blog_url) = m("blog")
-            val JsString(p_repos) = m("public_repos")
-            val JsString(p_gists) = m("public_gists")
-            val JsString(cr_on) = m("created_at")
-            val JsString(upd_on) = m("updated_at")
-            User(login, new URL(a_url), new URL(html_url), f_name, e_mail, blog_url, p_repos, p_gists, cr_on, upd_on)
+            //val JsString(company) = m("company")
+            val JsNumber(p_repos) = m("public_repos")
+            val JsNumber(followers) = m("followers")
+            val JsNumber(following) = m("following")
+            User(login, new URL(a_url), new URL(html_url), f_name, /*company,*/ p_repos , followers, following)
           case x =>
             deserializationError("GitHubUser expected.")
         }
