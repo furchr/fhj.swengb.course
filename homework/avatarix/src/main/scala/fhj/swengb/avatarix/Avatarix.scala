@@ -169,11 +169,11 @@ class AvatarixController extends Initializable {
     //Bitte Hier die Strings ersetzen mit den Daten zu der richtigen User ID
     avatar.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
 
-    fullname.setText("Name: Andreas Schneider")
-    company.setText("Firma: FH-Joanneum")
-    publicrepos.setText("Public repos: 22")
-    followers.setText("Followers: 9001")
-    following.setText("Following: 2")
+    fullname.setText("Name: " + Students.jblazevic.gitHubUser.name.toString)
+    //company.setText("Firma: " + Students.jblazevic.gitHubUser.company.toString)
+    publicrepos.setText("Public repos: " + Students.jblazevic.gitHubUser.pubRepos.toString)
+    followers.setText("Followers: " + Students.jblazevic.gitHubUser.followers.toString)
+    following.setText("Following: " + Students.jblazevic.gitHubUser.following.toString)
 
     //nur für die animation     -> nicht ändern
     anim(userinfo,false)
