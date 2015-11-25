@@ -90,7 +90,7 @@ class AvatarixController extends Initializable {
   @FXML var githubname:Label = _
   @FXML var avatar:ImageView = _
   @FXML var fullname:Label = _
-  @FXML var company:Label = _
+  @FXML var group:Label = _
   @FXML var publicrepos:Label = _
   @FXML var followers:Label = _
   @FXML var following:Label = _
@@ -98,12 +98,16 @@ class AvatarixController extends Initializable {
 
   //initialize function executes the commands at startup for the main scene
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
+
     user0f.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
     username0.setText(Students.jblazevic.firstName.toString + "\n" + Students.jblazevic.secondName.toString)
-/*    user1f.setImage(new Image(Students.mfuchs.gitHubUser.avatarUrl.toString))
+
+    /* user0f.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
+    username0.setText(Students.jblazevic.firstName.toString + "\n" + Students.jblazevic.secondName.toString)
+    user1f.setImage(new Image(Students.mfuchs.gitHubUser.avatarUrl.toString))
     username1.setText(Students.mfuchs.firstName.toString + "\n" + Students.mfuchs.secondName.toString)
-    user2f.setImage(new Image(Students.cfuerbahs.gitHubUser.avatarUrl.toString))
-    username2.setText(Students.cfuerbahs.firstName.toString + "\n" + Students.cfuerbahs.secondName.toString)
+    user0f.setImage(new Image(Students.cfuerbahs.gitHubUser.avatarUrl.toString))
+    username0.setText(Students.cfuerbahs.firstName.toString + "\n" + Students.cfuerbahs.secondName.toString)
     user3f.setImage(new Image(Students.fgraf.gitHubUser.avatarUrl.toString))
     username3.setText(Students.fgraf.firstName.toString + "\n" + Students.fgraf.secondName.toString)
     user4f.setImage(new Image(Students.thasenbichler.gitHubUser.avatarUrl.toString))
@@ -162,15 +166,15 @@ class AvatarixController extends Initializable {
     pathTrans.play()
   }
 
-
-  def setUserInfos(userId:String): Unit = {     //FÜR CARINAAA  -> hier wird die userId übergeben
-    githubname.setText(userId)
+    // Username wird momentan noch statisch/hardcoded übergeben - funktioniert, aber wird noch ausgebessert
+  def setUserInfos(userId:String): Unit = {
+    githubname.setText(Students.jblazevic.gitHubUser.login.toString)
 
     //Bitte Hier die Strings ersetzen mit den Daten zu der richtigen User ID
     avatar.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
 
-    fullname.setText("Name: " + Students.jblazevic.gitHubUser.name.toString)
-    //company.setText("Firma: " + Students.jblazevic.gitHubUser.company.toString)
+    fullname.setText("Name: " + Students.jblazevic.firstName + " " + Students.jblazevic.secondName)
+    group.setText("Group: " + Students.jblazevic.group.toString)
     publicrepos.setText("Public repos: " + Students.jblazevic.gitHubUser.pubRepos.toString)
     followers.setText("Followers: " + Students.jblazevic.gitHubUser.followers.toString)
     following.setText("Following: " + Students.jblazevic.gitHubUser.following.toString)

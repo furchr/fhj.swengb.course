@@ -99,7 +99,7 @@
                         </ImageView>
                         <Label fx:id="githubname" styleClass="label-text-userinfo" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                         <Label fx:id="fullname" styleClass="label-text-userinfo" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                        <Label fx:id="company" styleClass="label-text-userinfo" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Label fx:id="group" styleClass="label-text-userinfo" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                         <Label fx:id="publicrepos" styleClass="label-text-userinfo" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                         <Label fx:id="followers" styleClass="label-text-userinfo" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
                         <Label fx:id="following" styleClass="label-text-userinfo" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
