@@ -10,12 +10,12 @@ import scala.util.Try
 class PersonTest {
 
   @Test def testRladstaetter(): Unit = {
-    assertEquals("jbtastic", Speakers.rladstaetter.userId)
+    assertEquals("rladstaetter", Speakers.rladstaetter.userId)
   }
 
   @Test def testSpecialchars(): Unit = {
     val s = Student("Robert", "Ladstätter", "awesomecoder", 0)
-    assertEquals("jbtastic", s.userId)
+    assertEquals("rladstaetter", s.userId)
   }
 
   def checkStudentsForGithubAccount(groupId: Int): Unit = {

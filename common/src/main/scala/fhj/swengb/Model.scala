@@ -34,7 +34,7 @@ object Events {
 
 object Speakers {
 
-  val rladstaetter = Speaker("Robert", "Ladstätter", "jbtastic", 0)
+  val rladstaetter = Speaker("Robert", "Ladstätter", "rladstaetter", 0)
   val jblauensteiner: Speaker = Speaker("Johann", "Blauensteiner", "johblau", 0)
   val psalhofer: Speaker = Speaker("Peter", "Salhofer", "AnotherCodeArtist", 0)
   val speakers = Set(rladstaetter, jblauensteiner, psalhofer)
