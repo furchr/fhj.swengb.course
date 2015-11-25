@@ -13,8 +13,6 @@ object GitHub {
                   id: BigDecimal,
                   avatarUrl: URL,
                   htmlUrl: URL,
-                  name: String,
-                  //company: String,
                   pubRepos: BigDecimal,
                   followers: BigDecimal,
                   following: BigDecimal
@@ -29,8 +27,6 @@ object GitHub {
           JsNumber(user.id),
           JsString(user.avatarUrl.toString),
           JsString(user.htmlUrl.toString),
-          JsString(user.name),
-          //JsString(user.company)
           JsNumber(user.pubRepos),
           JsNumber(user.followers),
           JsNumber(user.following)
@@ -44,12 +40,10 @@ object GitHub {
             val JsNumber(id) = m("id")
             val JsString(a_url) = m("avatar_url")
             val JsString(html_url) = m("html_url")
-            val JsString(f_name) = m("name")
-            //val JsString(company) = m("company")
             val JsNumber(p_repos) = m("public_repos")
             val JsNumber(followers) = m("followers")
             val JsNumber(following) = m("following")
-            User(login, id, new URL(a_url), new URL(html_url), f_name, /*company,*/ p_repos , followers, following)
+            User(login, id, new URL(a_url), new URL(html_url), p_repos , followers, following)
           case x =>
             deserializationError("GitHubUser expected.")
         }
