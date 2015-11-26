@@ -7,7 +7,7 @@
     -fx-background-insets: 0,1,2,0;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
     -fx-font-family: "Arial";
-    -fx-text-fill: linear-gradient(white, #d0d0d0)
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
     -fx-padding: 10 20 10 20;
 }
 .userinfo {
@@ -19,7 +19,7 @@
     -fx-text-fill: white;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
     -fx-font-family: "Arial";
-    -fx-text-fill: linear-gradient(white, #d0d0d0)
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
     -fx-background-radius: 20px;
     -fx-padding: 65px;
     -fx-border-insets: 65px;
