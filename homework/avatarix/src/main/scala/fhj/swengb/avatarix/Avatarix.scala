@@ -99,15 +99,51 @@ class AvatarixController extends Initializable {
   //initialize function executes the commands at startup for the main scene
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 
-    user0f.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
-    username0.setText(Students.jblazevic.firstName.toString + "\n" + Students.jblazevic.secondName.toString)
+    val avatarlistg1 = Students.studentGroup1.map(s => s.gitHubUser.avatarUrl.toString).toList
+    val namesg1 = Students.studentGroup1.map(s => s.firstName + "\n" + s.secondName).toList
 
-    /* user0f.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
+    //avatarlistg1 foreach println
+    //namesg1 foreach println
+
+    val uiimages:List[ImageView] = List(
+      user0f,user1f,user2f,user3f,user4f,user5f,user6f,user7f,user8f,user9f,user10f,user11f
+      )
+
+    val uinames:List[Label] = List(
+      username0,username1,username2,username3,username4,username5,username6,username7,username8,username9,username10,username11
+    )
+
+    /*
+    val avatarlistg1 = List("ava1","ava2","ava3","ava4")
+    val namesg1 = List("name1","name2","name3","name4")
+    val uiimages = List("uiava1","uiava2","uiava3","uiava4")
+    val uinames = List("uiname1","uiname2","uiname3","uiname4")
+    */
+
+    val combine = uiimages zip uinames zip avatarlistg1 zip namesg1
+    def flatten2[A,B,C](t: ((A,B),C)) = (t._1._1, t._1._2, t._2)
+    def flatten3[A,B,C,D](t: ((A,B),C,D)) = (t._1._1, t._1._2, t._2, t._3)
+
+    for(e <- combine map flatten2 map flatten3) {
+      e._1.setImage(new Image(e._3))
+      e._2.setText(e._4)
+
+      //println(e._1.toString + " " + e._2.toString + " " + e._3.toString + " " + e._4.toString)
+      // println(e._1 + e._3 + e._2 + e._4)
+    }
+
+    // uncomment these 2 lines for first presentation
+    //user0f.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
+    //username0.setText(Students.jblazevic.firstName.toString + "\n" + Students.jblazevic.secondName.toString)
+
+
+    /*
+    user0f.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
     username0.setText(Students.jblazevic.firstName.toString + "\n" + Students.jblazevic.secondName.toString)
     user1f.setImage(new Image(Students.mfuchs.gitHubUser.avatarUrl.toString))
     username1.setText(Students.mfuchs.firstName.toString + "\n" + Students.mfuchs.secondName.toString)
-    user0f.setImage(new Image(Students.cfuerbahs.gitHubUser.avatarUrl.toString))
-    username0.setText(Students.cfuerbahs.firstName.toString + "\n" + Students.cfuerbahs.secondName.toString)
+    user2f.setImage(new Image(Students.cfuerbahs.gitHubUser.avatarUrl.toString))
+    username2.setText(Students.cfuerbahs.firstName.toString + "\n" + Students.cfuerbahs.secondName.toString)
     user3f.setImage(new Image(Students.fgraf.gitHubUser.avatarUrl.toString))
     username3.setText(Students.fgraf.firstName.toString + "\n" + Students.fgraf.secondName.toString)
     user4f.setImage(new Image(Students.thasenbichler.gitHubUser.avatarUrl.toString))
@@ -125,19 +161,20 @@ class AvatarixController extends Initializable {
     user10f.setImage(new Image(Students.aschneider.gitHubUser.avatarUrl.toString))
     username10.setText(Students.aschneider.firstName.toString + "\n" + Students.aschneider.secondName.toString)
     user11f.setImage(new Image(Speakers.rladstaetter.gitHubUser.avatarUrl.toString))
-    username11.setText(Speakers.rladstaetter.firstName.toString + "\n" + Speakers.rladstaetter.secondName.toString)*/
+    username11.setText(Speakers.rladstaetter.firstName.toString + "\n" + Speakers.rladstaetter.secondName.toString)
+  */
   }
 
 
 
-  val xDif = 1;
+  val xDif = 1
 
 
 
   def animation(obj:AnchorPane):Unit =
   {
     Thread.sleep(30)
-    obj.setTranslateX(obj.getTranslateX+xDif);
+    obj.setTranslateX(obj.getTranslateX+xDif)
     if (obj.getTranslateX <=0) {animation(obj)}
     else {print(obj.getTranslateY.toString + obj.getTranslateY.toString)
     }
