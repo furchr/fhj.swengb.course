@@ -164,23 +164,6 @@ class AvatarixController extends Initializable {
   */
   }
 
-
-
-  val xDif = 1
-
-
-
-  def animation(obj:AnchorPane):Unit =
-  {
-    Thread.sleep(30)
-    obj.setTranslateX(obj.getTranslateX+xDif)
-    if (obj.getTranslateX <=0) {animation(obj)}
-    else {print(obj.getTranslateY.toString + obj.getTranslateY.toString)
-    }
-  }
-
-
-
   def anim(obj:AnchorPane, slideRight:Boolean):Unit = {
     var xMitte = 300
     var yMitte = 400
