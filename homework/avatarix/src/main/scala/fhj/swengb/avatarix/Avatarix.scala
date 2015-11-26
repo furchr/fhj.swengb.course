@@ -98,19 +98,19 @@ class AvatarixController extends Initializable {
   //initialize function executes the commands at startup for the main scene
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 
-    val avatarlistg1 = Students.studentGroup1.map(s => s.gitHubUser.avatarUrl.toString).toList
-    val namesg1 = Students.studentGroup1.map(s => s.firstName + "\n" + s.secondName).toList
+    //val avatarlistg1 = Students.studentGroup1.map(s => s.gitHubUser.avatarUrl.toString).toList
+    //val namesg1 = Students.studentGroup1.map(s => s.firstName + "\n" + s.secondName).toList
 
     //avatarlistg1 foreach println
     //namesg1 foreach println
 
-    val uiimages:List[ImageView] = List(
+    /*val uiimages:List[ImageView] = List(
       user0f,user1f,user2f,user3f,user4f,user5f,user6f,user7f,user8f,user9f,user10f,user11f
-      )
+      )*/
 
-    val uinames:List[Label] = List(
+    /*val uinames:List[Label] = List(
       username0,username1,username2,username3,username4,username5,username6,username7,username8,username9,username10,username11
-    )
+    )*/
 
     /*
     val avatarlistg1 = List("ava1","ava2","ava3","ava4")
@@ -119,21 +119,21 @@ class AvatarixController extends Initializable {
     val uinames = List("uiname1","uiname2","uiname3","uiname4")
     */
 
-    val combine = uiimages zip uinames zip avatarlistg1 zip namesg1
+    /*val combine = uiimages zip uinames zip avatarlistg1 zip namesg1
     def flatten2[A,B,C](t: ((A,B),C)) = (t._1._1, t._1._2, t._2)
-    def flatten3[A,B,C,D](t: ((A,B),C,D)) = (t._1._1, t._1._2, t._2, t._3)
+    def flatten3[A,B,C,D](t: ((A,B),C,D)) = (t._1._1, t._1._2, t._2, t._3)*/
 
-    for(e <- combine map flatten2 map flatten3) {
+    /*for(e <- combine map flatten2 map flatten3) {
       e._1.setImage(new Image(e._3))
-      e._2.setText(e._4)
+      e._2.setText(e._4)*/
 
       //println(e._1.toString + " " + e._2.toString + " " + e._3.toString + " " + e._4.toString)
       // println(e._1 + e._3 + e._2 + e._4)
-    }
+   // }
 
     // uncomment these 2 lines for first presentation
-    //user0f.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
-    //username0.setText(Students.jblazevic.firstName.toString + "\n" + Students.jblazevic.secondName.toString)
+    user0f.setImage(new Image(Students.jblazevic.gitHubUser.avatarUrl.toString))
+    username0.setText(Students.jblazevic.firstName.toString + "\n" + Students.jblazevic.secondName.toString)
 
 
     /*
