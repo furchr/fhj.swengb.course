@@ -24,7 +24,6 @@ import fhj.swengb.{Students, Speakers}
 import scala.util.control.NonFatal
 
 
-
 //object launches the class described beneath
 object Avatarix {
   def main(args: Array[String]) {
